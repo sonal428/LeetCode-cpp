@@ -1,0 +1,22 @@
+//Runtime: 3 ms, faster than 97.25% of C++ online submissions for Shuffle the Array.
+//Memory Usage: 9.6 MB, less than 96.86% of C++ online submissions for Shuffle the Array.
+//understand each and every line first then implement 
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+                /*return type is vector and with that passing parameter is an vector array and n is the element after which y 
+                axis points are starting*/
+             vector<int> num(2*n,0); 
+                 /*creating an array of size 2n initializing in bracket and the 0 is to make an array containing all zero values initially */
+             int i=0;int j=0;
+             while(i<n){
+                 num[j]=nums[i];          /* filling two positions at a time:- all even poisions with the x axis elements and all odd positions with y axis elements*/
+                 num[j+1]=nums[n+i];
+                 i++;
+                 j=j+2;
+             }
+            
+         return num;
+    }
+    
+};
